@@ -1,8 +1,7 @@
 import { useState, useEffect, ChangeEvent } from 'react';
 import './app.scss';
 import { HideIcon, PasswordIcon, ShowIcon, EmailIcon } from '@shared/ui';
-import { Greeting } from '@shared/ui/greeting';
-import { AlertIcon } from '@shared/ui/icons/alert-icon';
+import { Greeting, AlertIcon } from '@shared/ui';
 
 const validateEmail = (email: string) => {
   const reg = /^\w+\@\w+\.\w+$/i;
