@@ -55,6 +55,13 @@ input[type='password'] {
   max-width: 100%;
   height: 40px;
 
+  .invalid-message {
+    position: absolute;
+    top: -20px;
+    z-index: 10;
+    color: var(--color-main-light);
+  }
+
   .icon {
     min-width: 24px;
   }

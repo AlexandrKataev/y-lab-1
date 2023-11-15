@@ -1,5 +1,5 @@
 import { IconProps } from '../icons/types';
-import styles from './Greeting.module.scss';
+import styles from './greeting.module.scss';
 
 export const Greeting = (props: IconProps) => {
   return (
@@ -11,7 +11,7 @@ export const Greeting = (props: IconProps) => {
       x="0px"
       y="0px"
       viewBox="0 0 14481 1270.983"
-      enable-background="new 0 0 14481 1270.983">
+      enableBackground="new 0 0 14481 1270.983">
       <line fill="#FFFFFF" stroke="white" x1="52.792" y1="1130.196" x2="1132.576" y2="1130.196" />
       <path
         className={styles.one}

@@ -1,12 +1,18 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, ChangeEvent } from 'react';
 import './app.scss';
 import { HideIcon, PasswordIcon, ShowIcon, EmailIcon } from '@shared/ui';
 import { Greeting } from '@shared/ui/greeting';
 import { AlertIcon } from '@shared/ui/icons/alert-icon';
 
+const validateEmail = (email: string) => {
+  const reg = /^\w+\@\w+\.\w+$/i;
+  return email.match(reg);
+};
+
 const App = () => {
   const [email, setEmail] = useState('');
   const [emailRequireMessage, setEmailRequireMessage] = useState(false);
+  const [isEmailValid, setEmailValid] = useState(true);
 
   const [password, setPassword] = useState('');
   const [passwordRequireMessage, setPasswordRequireMessage] = useState(false);
@@ -28,15 +34,25 @@ const App = () => {
   }, [password, passwordRequireMessage]);
 
   const onClickLogin = () => {
+    const isEmailValid = !!validateEmail(email);
     if (!email) {
       setEmailRequireMessage(true);
     }
     if (!password) {
       setPasswordRequireMessage(true);
     }
-    if (email && password) {
-      setShowGreeting(!showGreeting);
+    if (email) {
+      setEmailValid(isEmailValid);
     }
+    if (email && password && isEmailValid) {
+      setShowGreeting(!showGreeting);
+      console.log(JSON.stringify({ email, password }));
+    }
+  };
+
+  const onChangeEmail = (event: ChangeEvent<HTMLInputElement>) => {
+    setEmail(event.target.value);
+    setEmailValid(true);
   };
 
   const onClickLogout = () => {
@@ -54,13 +70,15 @@ const App = () => {
             <EmailIcon className="icon" />
             <input
               value={email}
-              onChange={(value) => setEmail(value.target.value)}
+              onChange={(event) => onChangeEmail(event)}
               className="input"
               type="text"
               placeholder="Email"
             />
-
-            {emailRequireMessage && <AlertIcon className="alert" />}
+            {!isEmailValid && (
+              <div className="invalid-message">Invalid email: example@gmail.com</div>
+            )}
+            {(emailRequireMessage || !isEmailValid) && <AlertIcon className="alert" />}
           </div>
           <div className="input_wrapper">
             <PasswordIcon className="icon" />
