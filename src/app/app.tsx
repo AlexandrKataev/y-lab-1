@@ -51,6 +51,7 @@ const App = () => {
         <form className="form">
           <h1 className="title">Log In</h1>
           <div className="input_wrapper">
+            <EmailIcon className="icon" />
             <input
               value={email}
               onChange={(value) => setEmail(value.target.value)}
@@ -58,10 +59,11 @@ const App = () => {
               type="email"
               placeholder="Email"
             />
-            <EmailIcon className="icon" />
+
             {emailRequireMessage && <AlertIcon className="alert" />}
           </div>
           <div className="input_wrapper">
+            <PasswordIcon className="icon" />
             <input
               value={password}
               onChange={(value) => setPassword(value.target.value)}
@@ -69,7 +71,7 @@ const App = () => {
               type={showPassword ? 'text' : 'password'}
               placeholder="Password"
             />
-            <PasswordIcon className="icon" />
+
             {password && showPassword && (
               <HideIcon className="show-password" onClick={() => setShowPassword(false)} />
             )}
