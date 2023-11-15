@@ -1,39 +1,34 @@
-import { useState, useEffect, ChangeEvent } from 'react';
+import { useState, ChangeEvent } from 'react';
 import './app.scss';
 import { HideIcon, PasswordIcon, ShowIcon, EmailIcon } from '@shared/ui';
 import { Greeting, AlertIcon } from '@shared/ui';
-
-const validateEmail = (email: string) => {
-  const reg = /^\w+\@\w+\.\w+$/i;
-  return email.match(reg);
-};
+import { useEmail } from './hooks/useEmail';
+import { usePassword } from './hooks/usePassword';
+import { validateEmail } from './helpers/validate-email';
 
 const App = () => {
-  const [email, setEmail] = useState('');
-  const [emailRequireMessage, setEmailRequireMessage] = useState(false);
-  const [isEmailValid, setEmailValid] = useState(true);
+  const {
+    email,
+    emailRequireMessage,
+    isEmailValid,
+    setEmail,
+    setEmailRequireMessage,
+    setEmailValid,
+  } = useEmail();
 
-  const [password, setPassword] = useState('');
-  const [passwordRequireMessage, setPasswordRequireMessage] = useState(false);
-
-  const [showPassword, setShowPassword] = useState(false);
+  const {
+    password,
+    setPassword,
+    passwordRequireMessage,
+    setPasswordRequireMessage,
+    showPassword,
+    setShowPassword,
+  } = usePassword();
 
   const [showGreeting, setShowGreeting] = useState(false);
 
-  useEffect(() => {
-    if (email && emailRequireMessage) {
-      setEmailRequireMessage(false);
-    }
-  }, [email, emailRequireMessage]);
-
-  useEffect(() => {
-    if (password && passwordRequireMessage) {
-      setPasswordRequireMessage(false);
-    }
-  }, [password, passwordRequireMessage]);
-
   const onClickLogin = () => {
-    const isEmailValid = !!validateEmail(email);
+    const isEmailValid = validateEmail(email);
     if (!email) {
       setEmailRequireMessage(true);
     }
