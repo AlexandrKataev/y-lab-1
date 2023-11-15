@@ -5,6 +5,7 @@ import { Greeting, AlertIcon } from '@shared/ui';
 import { useEmail } from './hooks/useEmail';
 import { usePassword } from './hooks/usePassword';
 import { validateEmail } from './helpers/validate-email';
+import { authService } from '@shared/api/services/auth.service';
 
 const App = () => {
   const {
@@ -40,7 +41,7 @@ const App = () => {
     }
     if (email && password && isEmailValid) {
       setShowGreeting(!showGreeting);
-      console.log(JSON.stringify({ email, password }));
+      authService.login({ email, password });
     }
   };
 
