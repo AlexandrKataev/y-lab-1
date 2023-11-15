@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import './App.scss';
+import './app.scss';
 import { HideIcon, PasswordIcon, ShowIcon, EmailIcon } from '@shared/ui';
 import { Greeting } from '@shared/ui/greeting';
 import { AlertIcon } from '@shared/ui/icons/alert-icon';
