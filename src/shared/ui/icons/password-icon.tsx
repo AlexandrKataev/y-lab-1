@@ -1,4 +1,3 @@
-import styles from './password-icon.module.scss';
 import { IconProps } from './types';
 
 export const PasswordIcon = (props: IconProps) => {
@@ -10,8 +9,8 @@ export const PasswordIcon = (props: IconProps) => {
       height="24"
       viewBox="0 0 24 24"
       fill="none"
-      stroke="var(--color-main)"
-      strokeWidth="1"
+      stroke="var(--color-main-light)"
+      strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round">
       <path d="M2 18v3c0 .6.4 1 1 1h4v-3h3v-3h2l1.4-1.4a6.5 6.5 0 1 0-4-4Z" />

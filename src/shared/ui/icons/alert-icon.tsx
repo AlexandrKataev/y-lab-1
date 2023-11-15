@@ -1,6 +1,6 @@
 import { IconProps } from './types';
 
-export const EmailIcon = (props: IconProps) => {
+export const AlertIcon = (props: IconProps) => {
   return (
     <svg
       {...props}
@@ -9,12 +9,13 @@ export const EmailIcon = (props: IconProps) => {
       height="24"
       viewBox="0 0 24 24"
       fill="none"
-      stroke="var(--color-main-light)"
+      stroke="var(--color-main-dark)"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round">
-      <circle cx="12" cy="12" r="4" />
-      <path d="M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-4 8" />
+      <circle cx="12" cy="12" r="10" />
+      <line x1="12" x2="12" y1="8" y2="12" />
+      <line x1="12" x2="12.01" y1="16" y2="16" />
     </svg>
   );
 };

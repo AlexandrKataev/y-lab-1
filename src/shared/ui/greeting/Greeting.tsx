@@ -1,8 +1,10 @@
+import { IconProps } from '../icons/types';
 import styles from './Greeting.module.scss';
 
-export const Greeting = () => {
+export const Greeting = (props: IconProps) => {
   return (
     <svg
+      {...props}
       version="1.1"
       id="Layer_2"
       xmlns="http://www.w3.org/2000/svg"
@@ -15,9 +17,9 @@ export const Greeting = () => {
         className={styles.one}
         fill="none"
         stroke="white"
-        stroke-width="84"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="84"
+        strokeLinecap="round"
+        strokeLinejoin="round"
         d="M72.498,1128.046h824
 c0,0,256.5,17,480-144c298.876-215.298,640-672,640-768s-128-80-128,64l-102.054,790.164c0,0,83.361-415.535,204.406-390.2
 c128.994,26.999,46.498,234.001,52.498,323.983s97.025,102.21,181.008,48.221"
@@ -26,9 +28,9 @@ c128.994,26.999,46.498,234.001,52.498,323.983s97.025,102.21,181.008,48.221"
         className={styles.two}
         fill="none"
         stroke="white"
-        stroke-width="84"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="84"
+        strokeLinecap="round"
+        strokeLinejoin="round"
         d="M2297,891.915
 c0,0,116,36,190-38c34-52,64-216-54-180c-28,10-164,90-150,306c4,46,50,202,296,38"
       />
@@ -36,9 +38,9 @@ c0,0,116,36,190-38c34-52,64-216-54-180c-28,10-164,90-150,306c4,46,50,202,296,38"
         className={styles.three}
         fill="none"
         stroke="white"
-        stroke-width="84"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="84"
+        strokeLinecap="round"
+        strokeLinejoin="round"
         d="M2659,737.915
 c0,0,240-204,236-396c4-64-152-196-242,216c-8,118-18,532,202,532c46,0,86-4,134-62"
       />
@@ -46,9 +48,9 @@ c0,0,240-204,236-396c4-64-152-196-242,216c-8,118-18,532,202,532c46,0,86-4,134-62
         className={styles.four}
         fill="none"
         stroke="white"
-        stroke-width="84"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="84"
+        strokeLinecap="round"
+        strokeLinejoin="round"
         d="M2981,737.915
 c0,0,240-204,236-396c4-64-152-196-242,216c-8,118-18,532,202,532c46,0,70,0,118-58"
       />
@@ -56,9 +58,9 @@ c0,0,240-204,236-396c4-64-152-196-242,216c-8,118-18,532,202,532c46,0,70,0,118-58
         className={styles.five}
         fill="none"
         stroke="white"
-        stroke-width="84"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="84"
+        strokeLinecap="round"
+        strokeLinejoin="round"
         d="M3403,681.915
 c0,0-118,2-130,222c4,78,34,188,116,184c54.444,0,168.455-15.146,114-338c-17.552-76.185-116.566-93.183-158.566-43.183
 c-10,24,48.005,225.022,230.566,113.183c0,0,334-258,864-254c400,0,8773.425,0,8773.425,0h147.015c0,0,63.007-24.197,18.002-69.202

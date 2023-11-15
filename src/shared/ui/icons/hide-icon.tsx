@@ -1,4 +1,3 @@
-import styles from './show-icon.module.scss';
 import { IconProps } from './types';
 
 export const HideIcon = (props: IconProps) => {
