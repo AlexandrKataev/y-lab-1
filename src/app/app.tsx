@@ -56,7 +56,7 @@ const App = () => {
               value={email}
               onChange={(value) => setEmail(value.target.value)}
               className="input"
-              type="email"
+              type="text"
               placeholder="Email"
             />
 
