@@ -1,0 +1,99 @@
+.container {
+  margin: 0 auto;
+  max-width: 800px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.title {
+  color: var(--color-main);
+}
+
+.form {
+  padding: 30px 0 70px 0;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  min-width: 70%;
+  max-width: 100%;
+
+  background: rgb(247, 243, 243);
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  transition: background-color 5000s ease-in-out 0s;
+  -webkit-text-fill-color: var(--color-main);
+}
+input[type='password'] {
+  letter-spacing: 3px;
+  &::placeholder {
+    letter-spacing: 0;
+  }
+}
+
+.input_wrapper {
+  position: relative;
+  width: 300px;
+  height: 40px;
+
+  .icon {
+    position: absolute;
+    right: 0px;
+    top: 10px;
+  }
+  .icon_button {
+    cursor: pointer;
+  }
+
+  .input {
+    width: 300px;
+    height: 40px;
+    color: var(--color-main);
+    background-color: rgba(247, 243, 243, 0);
+    border: none;
+    border-bottom: 2px solid var(--color-main-light);
+
+    &:-webkit-autofill::first-line,
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus,
+    &:-webkit-autofill:active {
+      font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif !important;
+      font-size: 1rem;
+    }
+
+    &::placeholder {
+      color: var(--color-main-light);
+    }
+
+    &:not(:placeholder-shown) {
+      color: var(--color-main-dark);
+    }
+  }
+
+  &:focus {
+    color: var(--color-main-light);
+  }
+}
+
+.button {
+  cursor: pointer;
+  margin-top: 30px;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: white;
+  background-color: var(--color-main);
+  border: none;
+  width: 140px;
+  height: 50px;
+  border-radius: 10px;
+}

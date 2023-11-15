@@ -1,0 +1,18 @@
+@import url('./shared/styles/_normalize.scss');
+@import url('./shared/styles/_vars.scss');
+
+:root {
+  background-image: linear-gradient(to right, rgb(242, 112, 156), rgb(255, 148, 114));
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+
+  font-weight: 400;
+
+  color: rgba(255, 255, 255, 0.87);
+  background-color: rgb(242, 112, 156);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
